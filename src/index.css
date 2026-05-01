@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif;
+
+  --color-brand-black: #09090b;
+  --color-brand-off-white: #f4f4f5;
+  --color-brand-zinc-800: #18181b;
+  --color-brand-zinc-700: #27272a;
+  --color-brand-zinc-600: #3f3f46;
+  --color-brand-accent: #6366f1;
+  --color-brand-accent-glow: rgba(99, 102, 241, 0.2);
+  --color-brand-muted: #71717a;
+  --color-brand-border: #27272a;
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-ticker: ticker 25s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-off-white font-sans font-normal leading-relaxed overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-brand-zinc-800 border border-brand-zinc-700 rounded-[1.5rem] transition-all duration-300 hover:border-brand-zinc-600;
+  }
+  .accent-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  }
+  .accent-text-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
